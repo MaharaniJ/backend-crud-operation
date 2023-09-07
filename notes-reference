@@ -1,0 +1,51 @@
+reference for auth-login/register:
+
+https://github.com/MaharaniJ/userAuthentication/blob/master/server/server.js
+
+https://github.com/MaharaniJ/register-mern/blob/main/server/server.js
+
+https://github.com/MaharaniJ/server-hashed-token/blob/main/controllers.js/usercontroller.js
+
+https://github.com/MaharaniJ/client-hashedpashword/tree/main/src
+
+
+just-Generate-Token and sent it throgh cookies:
+
+https://github.com/MaharaniJ/Password-reset-server/blob/main/routes/router.js
+
+https://github.com/MaharaniJ/password-reset-client
+
+
+authenticate/ validate the user through middleware:
+
+https://github.com/MaharaniJ/Password-reset-server/blob/main/middleware/authenticate.js
+
+___________________________________________________________________________________
+reference for Crud:
+https://github.com/MaharaniJ/reduxcrud/blob/main/src/components/AddTask.jsx
+
+https://github.com/MaharaniJ/MERN-crud/blob/main/server/index.js
+
+https://github.com/MaharaniJ/crud/blob/main/src/Create.jsx
+
+https://github.com/MaharaniJ/admin-dashboard-crud/blob/master/src/CreateUser.jsx
+
+
+reference for bcryptjs-package:
+
+https://www.npmjs.com/package/bcryptjs:
+To hash a password:
+
+To check a password:
+
+
+
+bcrypt - jwt -compare,sign,verify:
+
+https://dev.to/nyctonio/authentication-in-node-js-with-mongodb-bcrypt-and-jwt-web-tokens-with-cookies-hl3
+
+https://medium.com/zero-equals-false/building-a-restful-crud-api-with-node-js-jwt-bcrypt-express-and-mongodb-4e1fb20b7f3d
+
+https://github.com/auth0/node-jsonwebtoken
+
+https://jwt.io/introduction/
