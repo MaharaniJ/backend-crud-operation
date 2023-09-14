@@ -8,19 +8,18 @@ https://github.com/MaharaniJ/server-hashed-token/blob/main/controllers.js/userco
 
 https://github.com/MaharaniJ/client-hashedpashword/tree/main/src
 
-
 just-Generate-Token and sent it throgh cookies:
 
 https://github.com/MaharaniJ/Password-reset-server/blob/main/routes/router.js
 
 https://github.com/MaharaniJ/password-reset-client
 
-
 authenticate/ validate the user through middleware:
 
 https://github.com/MaharaniJ/Password-reset-server/blob/main/middleware/authenticate.js
 
-___________________________________________________________________________________
+---
+
 reference for Crud:
 https://github.com/MaharaniJ/reduxcrud/blob/main/src/components/AddTask.jsx
 
@@ -30,15 +29,12 @@ https://github.com/MaharaniJ/crud/blob/main/src/Create.jsx
 
 https://github.com/MaharaniJ/admin-dashboard-crud/blob/master/src/CreateUser.jsx
 
-
 reference for bcryptjs-package:
 
 https://www.npmjs.com/package/bcryptjs:
 To hash a password:
 
 To check a password:
-
-
 
 bcrypt - jwt -compare,sign,verify:
 
@@ -49,3 +45,31 @@ https://medium.com/zero-equals-false/building-a-restful-crud-api-with-node-js-jw
 https://github.com/auth0/node-jsonwebtoken
 
 https://jwt.io/introduction/
+
+jwt token:
+
+router.post("/login", async (req, res) => {
+try {
+const { email, password } = req.body;
+const findUser = await LoginUser.findOne({ email: email });
+
+    if (!findUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, findUser.password);
+
+    if (isPasswordValid) {
+      // Generate a JWT token with user information (e.g., user ID, name, etc.)
+      const token = jwt.sign({ userId: findUser._id, email: findUser.email }, "your-secret-key");
+
+      return res.status(200).json({ message: "Login successful", token: token });
+    } else {
+      return res.status(403).json({ message: "Invalid Credentials" });
+    }
+
+} catch (error) {
+console.error(error);
+return res.status(500).json({ message: "Login failed" });
+}
+});

@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/api", userRouter);
+app.use("/user", userRouter);
 
 app.listen(port, () => {
   console.log("App is Running in this port", `${port}`);
